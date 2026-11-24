@@ -1,0 +1,27 @@
+@startuml DiagramBorderColor
+
+class TestCase {
++ Titel: str
++Beskrivning: str
++Förväntat Resultat: str
++ID: UUID
+
+}
+
+class TestCaseRegister{
+    +TestCase: list[TestCase]
+    +add TestCase (Titel: str, Beskrivning: str, Förväntat Resultat: str,): TestCase
+    +get_test_case: list[TestCase]
+
+}
+
+class TestCaseDialog {
+    + register: TestCaseRegister
+    + register_test_case() : None
+    + show_test_cases() : None
+    + show_menu() : None
+}
+
+
+TestCaseDialog --> "1" TestCaseRegister : använder
+TestCaseRegister --> "0..*" TestCase : lagrar
