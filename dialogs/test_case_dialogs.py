@@ -10,31 +10,31 @@ class TestCaseDialog:
         test_cases =self.register.get_test_cases()
         
         if not test_cases:
-            print("\nDet finns inga registrerade testfall")
+            print("\nThere are no registerd Test Cases")
             return
     
         for test_case in test_cases:
-            print(f"Titel:{test_case.titel}")
-            print(f"Beskrivning {test_case.beskrivning}")
-            print(f"förväntat resultat{test_case.förväntat_resultat}")
+            print(f"Title:{test_case.title}")
+            print(f"Descriptiom {test_case.description}")
+            print(f"Expected Result{test_case.expected_result}")
             print(f"id: {test_case.id}")
 
     def register_test_case(self):
-        title = input("Titel: ").strip()
-        description = input("Beskrivning: ").strip()
-        expected_result = input("Förväntat Resultat: ").strip()
+        title = input("Title: ").strip()
+        description = input("Description: ").strip()
+        expected_result = input("Expected Result: ").strip()
 
         self.register.add_test_case(title, description, expected_result)
 
 
     def show_menu(self):
-        print("\n Välj bland alternativen")
+        print("\n Choose one of these options")
         while True:
-            print( "\n1. Registrera ett Testfall") 
-            print( "2. Visa dina Testfall" )
-            print("3 Avsluta")
+            print( "\n1. Register a Test Case") 
+            print( "2. Show your registerd Test Cases" )
+            print("3 Exit program")
 
-            choice = input("Välj ett alternativ: ").strip()
+            choice = input("Choose a option: ").strip()
 
 
             match choice:
@@ -43,16 +43,16 @@ class TestCaseDialog:
                     
 
                 case "2":
-                    print("\ndetta är de registrerade testfallen")
+                    print("\nThese are the registerd test cases")
                     self.show_test_cases()
 
 
                 case "3":
-                    print("\n###### Programet är avslutat ######")
+                    print("\n###### The program has ended ######")
                     break
 
                 case _:
-                    print("\n### Felaktigt alternativ välj bland 1,2,3 ### ")
+                    print("\n### Invalid option choose between 1,2 or 3 ### ")
 
             
 

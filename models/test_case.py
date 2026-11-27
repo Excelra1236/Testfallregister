@@ -3,9 +3,9 @@ from uuid import UUID, uuid4
 
 @dataclass
 class TestCase:
-    titel: str
-    beskrivning: str
-    förväntat_resultat: str
+    title: str
+    description: str
+    expected_result: str
     id: UUID = field(default_factory=uuid4, init=False)
     
 

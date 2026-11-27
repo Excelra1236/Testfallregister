@@ -1,22 +1,26 @@
 from services.test_case_register import TestCaseRegister as Register
 
-def test_nytt_ar_tomt():
+def test_new_is_empty():
     register = Register()
 
     assert register.get_test_cases() == []
 
 
-def test_lagg_till_testfall():
+def test_add_a_testcase():
     register = Register()
 
     register.add_test_case(
-        "Registera ett testfall",
-        "Fyll i titel, beskrivning och förväntat resultat",
-        "Testfallet sparas i registret"
+        "Register a testcase",
+        "input Title, Description, Expected Result",
+        "Testcase get saved in register"
 
     )
 
     test_cases = register.get_test_cases()
 
     assert len(test_cases) == 1
-    assert test_cases[0].titel == "Registera ett testfall"
+    assert test_cases[0].title == "Register a testcase"
+
+
+
+    
